@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;900&display=swap');
+
+:root{
+  --green: #D7E9B9;
+  --yellow: #FFFBAC;
+  --coral: #FFD495;
+  --orange: #FAAB78;
+  --navy: #344D67;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
+  background-color: var(--green);
+  color: var(--navy);
+  border-radius: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main{
+  display: flex;
+  flex-flow: row nowrap;
+  height: calc(100% - 120px);
+  margin-top: 40px;
+}
+
+nav {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-shrink: 0;
+  width: 120px;
+  margin-right: 10px;
+
+  border: 5px solid var(--green);
+  border-radius: 15px;
+  padding: 5px;
+}
+
+nav > span {
+  margin: .4rem;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+article {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  overflow-y: scroll;
+
+  border: 5px solid var(--coral);
+  border-radius: 15px;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 200px;
+  min-height: 150px;
+  padding: 10px;
+
+  background-color: var(--yellow);
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.card > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card > span:first-of-type {
+  margin-bottom: 10px;
+  color: var(--navy);
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--navy);
+  font-size: 1.2rem;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.card > span {
+  text-align: center;
+  word-break: break-all;
+}
+
+@media (max-width: 1000px){
+  .card{
+      background: var(--orange);
+  }
+}
+
+@media (max-width: 700px){
+  .card{
+      background: var(--coral);
+  }
+}
