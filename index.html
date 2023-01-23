@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TODO LIST</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <body>
+    <header>TODO LIST</header>
 
-<body>
-  <header>TODO LIST</header>
-
-  <main>
-    <nav>
-      <span>Todo</span>
-      <span>In Progress</span>
-      <span>Done</span>
-    </nav>
-
-    <article>
-      <div class="card">
-        <img src="./images/laundry.png" alt="빨래" />
-        <span>Done</span>
-        <span>빨래는 귀찮아요.</span>
-      </div>
-      <div class="card">
-        <img src="./images/reading.png" alt="책" />
-        <span>In Progress</span>
-        <span>요즘 Nudge를 다시 읽고 있어요.</span>
-      </div>
-      <div class="card">
-        <img src="./images/assignment.png" alt="과제" />
-        <span>In Progress</span>
-        <span>UoL Midterm 과제 중이예요.</span>
-      </div>
-      <div class="card">
-        <img src="./images/work-out.png" alt="운동" />
+    <main>
+      <nav>
+        <button type="button" class="add-button" id="addItem">추가</button>
         <span>Todo</span>
-        <span>발목이 나으면 다시 헬스를 조질 것입니다.</span>
-      </div>
-    </article>
-  </main>
-</body>
+        <span>In Progress</span>
+        <span>Done</span>
+      </nav>
 
+      <article id="container">
+        <div class="card">
+          <img src="./images/laundry.png" alt="빨래" />
+          <span>Done</span>
+          <span>빨래는 귀찮아요.</span>
+        </div>
+        <div class="card">
+          <img src="./images/reading.png" alt="책" />
+          <span>In Progress</span>
+          <span>요즘 Nudge를 다시 읽고 있어요.</span>
+        </div>
+        <div class="card">
+          <img src="./images/assignment.png" alt="과제" />
+          <span>In Progress</span>
+          <span>UoL Midterm 과제 중이예요.</span>
+        </div>
+        <div class="card">
+          <img src="./images/work-out.png" alt="운동" />
+          <span>Todo</span>
+          <span>발목이 나으면 다시 헬스를 조질 것입니다.</span>
+        </div>
+      </article>
+    </main>
+
+    <div class="modal-background" id="modal">
+      <form class="modal" id="addItemForm">
+        <label for="status" class="label">상태</label>
+        <select
+          id="status"
+          type="text"
+          placeholder="Task를 입력해 주세요."
+          class="input"
+          maxlength="12"
+          required
+        >
+          <option value="Todo">Todo</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+        <label for="image" class="label">이미지</label>
+        <input
+          id="image"
+          type="text"
+          placeholder="URL을 입력해 주세요."
+          class="input"
+          required
+        />
+        <label for="content" class="label">내용</label>
+        <input
+          id="content"
+          type="text"
+          placeholder="Task 내용을 입력해 주세요."
+          class="input"
+          required
+        />
+        <div class="submit-buttons">
+          <button type="button" class="submit-button close" id="closeModal">
+            닫기
+          </button>
+          <button type="submit" class="submit-button">저장</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./modal.js"></script>
+    <script src="./addItem.js"></script>
+  </body>
 </html>
