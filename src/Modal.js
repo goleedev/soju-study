@@ -2,13 +2,16 @@ import { useState } from "react";
 
 function Modal({ handleAddItem, isModalOpen, handleModalOpen }) {
   const [status, setStatus] = useState("");
-  const [content, setContent] = useState("");
   const [image, setImage] = useState("");
+  const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddItem({ status, content, image });
     handleModalOpen(false);
+    setStatus("");
+    setImage("");
+    setContent("");
   };
 
   const selecOptions = [
